@@ -18,7 +18,7 @@ from transformers import pipeline
 # ==========================================
 # UI CONFIGURATION
 # ==========================================
-st.set_page_config(page_title="Mental Health Companion", page_icon="💙", layout="centered")
+st.set_page_config(page_title="Sereni AI",layout="centered")
 st.title("Sereni AI - Agentic Mental Health Assistant")
 st.caption("A safe, private space to talk about how you're feeling.")
 
@@ -27,7 +27,7 @@ st.caption("A safe, private space to talk about how you're feeling.")
 # ==========================================
 # Streamlit uses st.secrets instead of hardcoded strings for security
 if "HUGGINGFACEHUB_API_TOKEN" in st.secrets:
-    os.environ["HUGGINGFACEHUB_API_TOKEN"] = st.secrets["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"]
+    os.environ["HUGGINGFACEHUB_API_TOKEN"] = st.secrets["HUGGINGFACEHUB_API_TOKEN"]
 else:
     st.error("🚨 Hugging Face Token is missing! Please add it to your Streamlit secrets.")
     st.stop()
@@ -214,4 +214,5 @@ if prompt := st.chat_input("Type your message here..."):
             st.write(bot_response)
             
             # 4. Save to UI state
+
             st.session_state.ui_messages.append({"role": "assistant", "content": bot_response})
