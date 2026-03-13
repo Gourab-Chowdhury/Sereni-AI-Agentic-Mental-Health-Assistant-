@@ -1,4 +1,4 @@
-# Sereni AI - Mental Health Chatbot
+# Sereni AI - Agentic Mental Health Assistant
 
 ## Description
 
