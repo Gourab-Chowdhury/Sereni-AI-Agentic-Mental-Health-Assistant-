@@ -26,8 +26,9 @@ from transformers import pipeline
 # ==========================================
 # 1. UI SETUP & CONFIGURATION
 # ==========================================
-st.set_page_config(page_title="AI Mental Health Companion", page_icon="💙")
-st.title("💙 AI Mental Health Companion")
+st.set_page_config(page_title="Sereni AI", layout="centered")
+st.title("Sereni AI - Agentic Mental Health Assistant")
+st.caption("A safe, private space to talk about how you're feeling.")
 
 # Handle API Token Safely
 if "HUGGINGFACEHUB_API_TOKEN" in st.secrets:
@@ -48,7 +49,7 @@ def load_ai_systems():
         repo_id="openai/gpt-oss-20b", # Your chosen model
         task="text-generation", 
         temperature=0.7,
-        max_new_tokens=512,
+        max_new_tokens=1024,
         return_full_text=False,
         do_sample=True
     )
@@ -288,3 +289,4 @@ if prompt := st.chat_input("Type your message here..."):
                 error_msg = f"An error occurred: {str(e)}\n\n*Remember: You're not alone, and it's okay to ask for help. 💙*"
                 st.error(error_msg)
                 st.session_state.messages.append({"role": "assistant", "content": error_msg})
+
