@@ -1,8 +1,10 @@
 streamlit
 langchain
 langchain-classic
+langchain-community
 langchain-huggingface
 langchain-chroma
 langgraph
 transformers
 sentence-transformers
+huggingface_hub
